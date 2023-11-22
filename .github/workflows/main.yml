@@ -10,7 +10,6 @@ permissions:
   contents: write
 
 jobs:
-  # Build job
   build:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
@@ -28,4 +27,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with: 
           branch: gh-pages
-          folder: dist
+          folder: docs/.vuepress/dist
