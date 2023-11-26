@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ingress安装 | YDS</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="后端相关的技术学习总结。但也不完全局限于后端，包含有java，js，db，devops，linux等。">
+    <meta name="keywords" content="个人技术博客,后端,前端,后端开发,后端框架,数据库,服务器,算法,网络技术,技术文档,学习,面试,java,mysql,spring,JavaScript,js,vue,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.ada71c49.css" as="style"><link rel="preload" href="/assets/js/app.3338fd76.js" as="script"><link rel="preload" href="/assets/js/2.5cbf9e45.js" as="script"><link rel="preload" href="/assets/js/23.fe4b273e.js" as="script"><link rel="prefetch" href="/assets/js/10.4896204d.js"><link rel="prefetch" href="/assets/js/11.41c6a9f7.js"><link rel="prefetch" href="/assets/js/12.725bac1d.js"><link rel="prefetch" href="/assets/js/13.408a3ce9.js"><link rel="prefetch" href="/assets/js/14.5f55e747.js"><link rel="prefetch" href="/assets/js/15.d7190d02.js"><link rel="prefetch" href="/assets/js/16.0f51a662.js"><link rel="prefetch" href="/assets/js/17.b2046b69.js"><link rel="prefetch" href="/assets/js/18.11da3563.js"><link rel="prefetch" href="/assets/js/19.e3fec1e5.js"><link rel="prefetch" href="/assets/js/20.c25daa5c.js"><link rel="prefetch" href="/assets/js/21.4e10532d.js"><link rel="prefetch" href="/assets/js/22.9b51f53d.js"><link rel="prefetch" href="/assets/js/24.7bc8e85e.js"><link rel="prefetch" href="/assets/js/25.8eb485e0.js"><link rel="prefetch" href="/assets/js/26.e596071d.js"><link rel="prefetch" href="/assets/js/27.b0e68756.js"><link rel="prefetch" href="/assets/js/28.8e888dd9.js"><link rel="prefetch" href="/assets/js/29.9ac72a10.js"><link rel="prefetch" href="/assets/js/3.b7fd52f5.js"><link rel="prefetch" href="/assets/js/30.cf59881e.js"><link rel="prefetch" href="/assets/js/31.e2d3bc1c.js"><link rel="prefetch" href="/assets/js/32.94297311.js"><link rel="prefetch" href="/assets/js/33.d7dfb80b.js"><link rel="prefetch" href="/assets/js/34.4550a12a.js"><link rel="prefetch" href="/assets/js/35.c0507e1f.js"><link rel="prefetch" href="/assets/js/36.f3ebd6b1.js"><link rel="prefetch" href="/assets/js/37.7a176b45.js"><link rel="prefetch" href="/assets/js/38.20b62c81.js"><link rel="prefetch" href="/assets/js/4.edf4d5e7.js"><link rel="prefetch" href="/assets/js/5.69598875.js"><link rel="prefetch" href="/assets/js/6.5044a508.js"><link rel="prefetch" href="/assets/js/7.ee745000.js"><link rel="prefetch" href="/assets/js/8.11d4f349.js"><link rel="prefetch" href="/assets/js/9.0185dd7d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ada71c49.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">YDS</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/img/avatar.jpeg"> <div class="blogger-info"><h3>YDS</h3> <span>30岁大龄程java序员，心不老，神不灭</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>K8S</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DOCKER</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>HELM</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/578684/" class="sidebar-link">HELM3安装</a></li><li><a href="/pages/df00ee/" aria-current="page" class="active sidebar-link">ingress安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#添加chart仓库" class="sidebar-link">添加Chart仓库</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#查找chart" class="sidebar-link">查找Chart</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#服务器使用nginx做ingress转发" class="sidebar-link">服务器使用nginx做ingress转发</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#示例pod" class="sidebar-link">示例POD</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#ssl" class="sidebar-link">ssl</a></li><li class="sidebar-sub-header level2"><a href="/pages/df00ee/#https" class="sidebar-link">https</a></li></ul></li><li><a href="/pages/278aa0/" class="sidebar-link">drone安装</a></li><li><a href="/pages/29f969/" class="sidebar-link">使用HELM发布vue项目</a></li><li><a href="/pages/973edb/" class="sidebar-link">HELM安装gitea</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>LINUX</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/devops/#DEVOPS" data-v-06225672>DEVOPS</a></li><li data-v-06225672><a href="/devops/#HELM" data-v-06225672>HELM</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/dashuai1992" target="_blank" title="作者" class="beLink" data-v-06225672>yds</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-11-25</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">ingress安装<!----></h1>  <div class="theme-vdoing-content content__default"><h1 id="helm安装nginx-ingress"><a href="#helm安装nginx-ingress" class="header-anchor">#</a> helm安装nginx-ingress</h1> <h2 id="添加chart仓库"><a href="#添加chart仓库" class="header-anchor">#</a> 添加Chart仓库</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>helm repo <span class="token function">add</span> nginx-stable https://helm.nginx.com/stable
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="查找chart"><a href="#查找chart" class="header-anchor">#</a> 查找Chart</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>helm search repo nginx-ingress
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <p>添加仓库</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>helm repo <span class="token function">add</span> ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code>helm <span class="token function">install</span> ingress-nginx-release ./ingress-nginx <span class="token punctuation">\</span>
+<span class="token parameter variable">--set</span> <span class="token assign-left variable">controller.service.type</span><span class="token operator">=</span>NodePort <span class="token punctuation">\</span>
+<span class="token parameter variable">--set</span> <span class="token assign-left variable">controller.service.nodePorts.http</span><span class="token operator">=</span><span class="token number">30080</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">--set</span> <span class="token assign-left variable">controller.service.nodePorts.https</span><span class="token operator">=</span><span class="token number">30443</span> <span class="token punctuation">\</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="服务器使用nginx做ingress转发"><a href="#服务器使用nginx做ingress转发" class="header-anchor">#</a> 服务器使用nginx做ingress转发</h2> <div class="language-text line-numbers-mode"><pre class="language-text"><code>server {
+   listen 80;
+   server_name nginx.demo.why1024.com;
+
+   location / {
+       proxy_set_header   X-Real-IP $remote_addr;
+       proxy_set_header   Host      $http_host;
+       proxy_pass         http://0.0.0.0:30080;
+   }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><code>30080的端口服务器不用开放,对外始终是80端口的nginx</code></p> <h2 id="示例pod"><a href="#示例pod" class="header-anchor">#</a> 示例POD</h2> <p><code>vim nginx.yaml</code></p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+ <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+   <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+     <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+ <span class="token key atrule">template</span><span class="token punctuation">:</span>
+   <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+     <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+       <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+   <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+     <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+       <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest
+       <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> html
+         <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /usr/share/nginx/html
+       <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+       <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> html
+       <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
+         <span class="token key atrule">claimName</span><span class="token punctuation">:</span> nginx
+
+<span class="token punctuation">---</span>
+
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+   <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+ <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+   <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+
+<span class="token punctuation">---</span>
+
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolume
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+ <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+   <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">nfs</span><span class="token punctuation">:</span>
+   <span class="token key atrule">path</span><span class="token punctuation">:</span> /data/volumes/v1
+   <span class="token key atrule">server</span><span class="token punctuation">:</span> master01
+ <span class="token key atrule">accessModes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;ReadWriteMany&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;ReadWriteOnce&quot;</span><span class="token punctuation">]</span>
+ <span class="token key atrule">capacity</span><span class="token punctuation">:</span>
+   <span class="token key atrule">storage</span><span class="token punctuation">:</span> 1Gi
+
+<span class="token punctuation">---</span>
+
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">accessModes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;ReadWriteMany&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;ReadWriteOnce&quot;</span><span class="token punctuation">]</span>
+ <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+   <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+     <span class="token key atrule">storage</span><span class="token punctuation">:</span> 1Gi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <p><code>vim nginx-demo-ingress.yaml</code></p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>ingress
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">ingressClassName</span><span class="token punctuation">:</span> nginx
+ <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> nginx.demo.why1024.com
+   <span class="token key atrule">http</span><span class="token punctuation">:</span>
+     <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+       <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+       <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+         <span class="token key atrule">service</span><span class="token punctuation">:</span>
+           <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+           <span class="token key atrule">port</span><span class="token punctuation">:</span>
+             <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>annotations 和 ingressClassName不能同时设置</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>ingress
+<span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+  <span class="token key atrule">kubernetes.io/ingress.class</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> nginx.demo.why1024.com
+  <span class="token key atrule">http</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+      <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+      <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service</span><span class="token punctuation">:</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+          <span class="token key atrule">port</span><span class="token punctuation">:</span>
+            <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><code>kubectl apply -f nginx-demo-ingress.yaml</code></p> <p><code>curl 10.0.24.3:30080 -H &quot;Host: nginx.demo.why1024.com&quot;</code></p> <h2 id="ssl"><a href="#ssl" class="header-anchor">#</a> ssl</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>kubectl create secret tls server-api.why1024.com-secret <span class="token parameter variable">--key</span> ./server-api.why1024.com.key <span class="token parameter variable">--cert</span> ./server-api.why1024.com_bundle.crt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">*****-prod</span>
+ <span class="token key atrule">namespace</span><span class="token punctuation">:</span> prod
+ <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+   <span class="token key atrule">app</span><span class="token punctuation">:</span> <span class="token important">*****-prod</span>
+ <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+   <span class="token key atrule">nginx.ingress.kubernetes.io/rewrite-target</span><span class="token punctuation">:</span> / <span class="token comment">#重写路径</span>
+   <span class="token key atrule">nginx.ingress.kubernetes.io/ssl-redirect</span><span class="token punctuation">:</span> <span class="token string">'true'</span> <span class="token comment">#http 自动转https</span>
+   <span class="token key atrule">nginx.ingress.kubernetes.io/proxy-connect-timeout</span><span class="token punctuation">:</span> <span class="token string">&quot;600&quot;</span> <span class="token comment">#修改代理超时时间，默认是60s</span>
+   <span class="token key atrule">nginx.ingress.kubernetes.io/proxy-read-timeout</span><span class="token punctuation">:</span> <span class="token string">&quot;600&quot;</span>
+   <span class="token key atrule">nginx.ingress.kubernetes.io/proxy-send-timeout</span><span class="token punctuation">:</span> <span class="token string">&quot;600&quot;</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">tls</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token string">'app.*****.com'</span>
+   <span class="token key atrule">secretName</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span><span class="token important">*****-com-secret</span>
+ <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">&quot;app.*****.com&quot;</span>
+     <span class="token key atrule">http</span><span class="token punctuation">:</span>
+       <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+         
+         
+         <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+           <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+             <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> qwer<span class="token punctuation">-</span>mobile<span class="token punctuation">-</span>prod
+             <span class="token key atrule">servicePort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="https"><a href="#https" class="header-anchor">#</a> https</h2> <p>nginx</p> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>server {
+    listen 80;
+    server_name server-api.why1024.com;
+    rewrite ^(.*) https://server-api.why1024.com permanent;
+}
+
+server {
+    listen 443 ssl;
+    server_name server-api.why1024.com;
+    ssl_certificate conf.d/cert/tls.crt;
+    ssl_certificate_key conf.d/cert/tls.key;
+    ssl_session_timeout 5m;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    location / {
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   Host      $http_host;
+        proxy_pass         https://0.0.0.0:30443;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>helm安装应用时开启ingress</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>helm install my-nginx-release -f values.yaml . \
+--set serviceAccount.create=false \
+--set ingress.enabled=true \
+--set ingress.className=nginx \
+--set ingress.hosts[0].host=nginx.my.com \
+--set ingress.hosts[0].paths[0].pathType=Prefix 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></div></div>  <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=DEVOPS" title="标签">#DEVOPS</a><a href="/tags/?tag=HELM" title="标签">#HELM</a><a href="/tags/?tag=K8S" title="标签">#K8S</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/11/26, 11:23:26</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/578684/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">HELM3安装</div></a> <a href="/pages/278aa0/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">drone安装</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/578684/" class="prev">HELM3安装</a></span> <span class="next"><a href="/pages/278aa0/">drone安装</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/1527d8/"><div>
+            NoSql概念
+            <!----></div></a> <span class="date">11-26</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/7f09ac/"><div>
+            threadPool注解直译
+            <!----></div></a> <span class="date">11-26</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f5f63d/"><div>
+            NGINX配置详解
+            <!----></div></a> <span class="date">11-26</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:dashuai1992@live.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/dashuai1992" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://space.bilibili.com/326277976" title="bilibili" target="_blank" class="iconfont icon-bilibili"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2023
+    <span>YDS | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011402012469" target="_blank">京公网安备 11011402012469号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022007026号-1</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.3338fd76.js" defer></script><script src="/assets/js/2.5cbf9e45.js" defer></script><script src="/assets/js/23.fe4b273e.js" defer></script>
+  </body>
+</html>
