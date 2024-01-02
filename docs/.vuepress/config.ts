@@ -18,7 +18,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "YDS",
+      title: "一个简单的小开发",
       description: '后端相关的技术学习总结。但也不完全局限于后端，包含有java，js，db，devops，linux等。',
     }
   },
@@ -129,7 +129,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2020, // 博客创建年份
       copyrightInfo:
-        'YDS | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011402012469" target="_blank">京公网安备 11011402012469号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022007026号-1</a>', 
+        'YDS', 
+        //'YDS | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011402012469" target="_blank">京公网安备 11011402012469号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022007026号-1</a>',   
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
